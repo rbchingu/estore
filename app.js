@@ -3,14 +3,18 @@ const express = require('express');
 const httpErrors = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
+const expressHbs = require('express-handlebars');
 
 const indexRouter = require('./routes/index');
 
 const app = express();
 
-app.set('views', path.join(__dirname, 'views'));
+
 // view engine setup
+app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('view engine', 'hbs');
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

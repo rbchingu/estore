@@ -1,13 +1,23 @@
+/*
+1: imported express-handlebars as expressHbs and set view engine to use hbs
+
+2: imported mongoose as mongoose and connected to database using mongoose.connect.  Default port for mongodb is 21017 so we will set the parameter
+to loclahost:21017 and create a database for our products.
+*/
+
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const httpErrors = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
 const expressHbs = require('express-handlebars');
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 
 const app = express();
+
+mongoose.connect('localhost:21017/estore');
 
 
 // view engine setup

@@ -1,9 +1,8 @@
-
 const Product = require('../models/product')
 
 const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
-mongoose.connect('localhost:27017/shopping')
 
 let products = [
     new Product({     
@@ -43,3 +42,9 @@ let products = [
         price: 60
     }),
 ];
+
+
+mongoose.connect('mongodb://localhost:27017/estore6', {useNewUrlParser: true})
+    .then(Product.collection.insertMany(products))
+    .then(() => mongoose.connection.close())
+//originally had: .then(mongoose.connection.close()) as opposed to returning it in callback and it didnt work. why?

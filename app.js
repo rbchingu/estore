@@ -17,7 +17,7 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
-mongoose.connect('localhost:21017/estore');
+mongoose.connect('mongodb://localhost:21017/estore', {useNewUrlParser: true});
 
 
 // view engine setup

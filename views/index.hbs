@@ -1,98 +1,29 @@
 <div class="product-grid">
-    <div class="card">
-        <img class="product-image" src="https://i5.walmartimages.com/asr/3ad45896-4a67-4a78-9262-03fed10a8e33_1.eb5085c1c65e3280dc6eb90354810cb4.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF">
-            <div class="card-block">
-                <h4 class="card-title">
-                    This is a title
-                </h4>
-                <p class="card-description">
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                </p>
-                <div class="price-qty">
-                    <div class="price">
-                        $12
-                    </div>
-                    <input type="text" class="qty">
-                </div>
-                <button class="buy" type="button">
-                        Buy now
-                </button>
-
-
-            </div>
-    </div>
-    <div class="card">
-        <img class="product-image" src="https://i5.walmartimages.com/asr/3ad45896-4a67-4a78-9262-03fed10a8e33_1.eb5085c1c65e3280dc6eb90354810cb4.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF">
-            <div class="card-block">
-                <h4 class="card-title">
-                    This is a title
-                </h4>
-                <p class="card-description">
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                </p>
-                <div class="price-qty">
-                    <div class="price">
-                        $12
-                    </div>
-                    <input type="text" class="qty">
-                </div>
-                <button class="buy" type="button">
-                        Buy now
-                </button>
-
-
-            </div>
-    </div>
+    {{#each products}}
         <div class="card">
-        <img class="product-image" src="https://i5.walmartimages.com/asr/3ad45896-4a67-4a78-9262-03fed10a8e33_1.eb5085c1c65e3280dc6eb90354810cb4.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF">
-            <div class="card-block">
-                <h4 class="card-title">
-                    This is a title
-                </h4>
-                <p class="card-description">
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                </p>
-                <div class="price-qty">
-                    <div class="price">
-                        $12
+            <img class="product-image" src="{{this.imagePath}}">
+                <div class="card-block">
+                    <h4 class="card-title">
+                        {{this.title}}
+                    </h4>
+                    <p class="card-description">
+                        {{this.description}}
+                    </p>
+                    <div class="price-qty">
+                        <div class="price">
+                            ${{this.price}}
+                        </div>
+                        <p>Qty:
+                            <input type="text" class="qty">
+                        </p>
+                        
                     </div>
-                    <input type="text" class="qty">
+                    <button class="buy" type="button">
+                            Buy now
+                    </button>
+
+
                 </div>
-                <button class="buy" type="button">
-                        Buy now
-                </button>
-
-
-            </div>
-    </div>
-        <div class="card">
-        <img class="product-image" src="https://i5.walmartimages.com/asr/3ad45896-4a67-4a78-9262-03fed10a8e33_1.eb5085c1c65e3280dc6eb90354810cb4.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF">
-            <div class="card-block">
-                <h4 class="card-title">
-                    This is a title
-                </h4>
-                <p class="card-description">
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                    description description description description description description description description description description description description 
-                </p>
-                <div class="price-qty">
-                    <div class="price">
-                        $12
-                    </div>
-                    <input type="text" class="qty">
-                </div>
-                <button class="buy" type="button">
-                        Buy now
-                </button>
-
-
-            </div>
-    </div>
+        </div>
+    {{/each}}
 </div>

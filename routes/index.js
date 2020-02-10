@@ -2,10 +2,17 @@ const { Router } = require('express');
 
 const router = Router();
 
+const Product = require('../models/product')
+
 /* GET index page. */
 router.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Express'
+  Product.find((err, data)=>{
+      let products = data;
+      res.render('index', {
+        title: 'Express',
+        products: products
+    });
+
   });
 });
 

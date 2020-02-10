@@ -12,12 +12,14 @@ const logger = require('morgan');
 const path = require('path');
 const expressHbs = require('express-handlebars');
 const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
 const indexRouter = require('./routes/index');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:21017/estore', {useNewUrlParser: true});
+
+mongoose.connect('mongodb://localhost:27017/estore6', {useNewUrlParser: true});
 
 
 // view engine setup

@@ -11,3 +11,9 @@
 5. Create a models folder to store your mongoose models.  In models folder, create a product model file (schema).
 
 6.  We need to seed "products" into our database if we don't have real products.  We can use faker.js or some other seeding package, or we can create our own product seeder.  We will make a product seeder.  Create a folder called seed and a file in that folder called product-seeder.js or whatever you want.
+    Note: also install bluebird for promises and change mongoose's promise module (mongoose.Promise = require('bluebird))
+
+7. Once seeded, access product info by using the find() method.  The database will be accessed anytime the main page is loaded and so the find() method should be placed in the root route.  (index.js in routes folder).
+
+8. Iterate through the products in the html by using handlebar's ability to iterate through a list with {{#each}} (make sure to pass the list in the root route)
+

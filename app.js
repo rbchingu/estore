@@ -13,6 +13,8 @@ const path = require('path');
 const expressHbs = require('express-handlebars');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
+const session = require('express-session');
+
 
 const indexRouter = require('./routes/index');
 
@@ -31,6 +33,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+
+}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

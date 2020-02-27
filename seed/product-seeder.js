@@ -44,7 +44,7 @@ let products = [
 ];
 
 
-mongoose.connect('mongodb://localhost:27017/estore6', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true})
     .then(Product.collection.insertMany(products))
     .then(() => mongoose.connection.close())
 //originally had: .then(mongoose.connection.close()) as opposed to returning it in callback and it didnt work. why?

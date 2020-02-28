@@ -20,9 +20,13 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/signup', (req, res) => {
+router.get('/user/signup', (req, res) => {
   res.render('user/signup', {csrfToken: req.csrfToken()});
 
 });
+
+router.post('/user/signup', (req, res) => {
+  res.redirect('/');
+})
 
 module.exports = router;
